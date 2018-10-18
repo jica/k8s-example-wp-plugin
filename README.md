@@ -1,5 +1,8 @@
-# k8s-example-wp-plugin
-Example plugin to test RBAC, used for trainings
+# Kubernetes RBAC Exercise: Plugin
+
+> NOTE: This is meant to be used as a training exercise (it is incomplete in purpose)
+
+Example plugin to test RBAC, used for trainings. 
 
 The code is not complete. You need to fill two parts:
 
