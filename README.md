@@ -11,3 +11,8 @@ It is writing information in the error log so you can also check in your web ser
 
 This is a simple widget that shows the number of replicas of the deployment.
 
+- Backend view:
+![Backend](https://raw.githubusercontent.com/javsalgar/k8s-example-wp-plugin/master/images/Backend.png)
+
+- Frontend view:
+![Frontend](https://raw.githubusercontent.com/javsalgar/k8s-example-wp-plugin/master/images/Frontend.png)
