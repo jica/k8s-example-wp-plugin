@@ -64,14 +64,15 @@ class k8s_widget extends WP_Widget
         $ch = curl_init();
 
         // Subsitute the two PUT_HERE placeholders. WP_K8S_PLUGIN_DEPLOYMENT_NAME is an environment variable
-        curl_setopt($ch, CURLOPT_URL, "https://PUT_HERE_DNS_OF_API_SERVER:443/PUT_HERE_API_PATH_TO_DEPLOYMENTS/" . getenv('WP_K8S_PLUGIN_DEPLOYMENT_NAME')); // TODO
+        curl_setopt($ch, CURLOPT_URL, "https://kubernetes.default.svc:443/extensions/v1beta1/deployment/" . getenv('WP_K8S_PLUGIN_DEPLOYMENT_NAME')); // TODO
 
         // This will disable https verification check
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
         // Path to Service Account token (Substitute the PUT_HERE placeholder)
-        $path_to_file = 'PUT_HERE_THE_PATH_TO_THE_SERVICE_ACCOUNT_TOKEN_FILE'; // TODO
+//        $path_to_file = 'PUT_HERE_THE_PATH_TO_THE_SERVICE_ACCOUNT_TOKEN_FILE'; // TODO
+        $path_to_file = '/var/run/secrets/kubernetes.io/serviceaccount/token'; // TODO
 
         // Open the file
         $token_file = fopen($path_to_file, "r");
