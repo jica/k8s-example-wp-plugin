@@ -64,7 +64,8 @@ class k8s_widget extends WP_Widget
         $ch = curl_init();
 
         // Subsitute the two PUT_HERE placeholders. WP_K8S_PLUGIN_DEPLOYMENT_NAME is an environment variable
-        curl_setopt($ch, CURLOPT_URL, "https://kubernetes.default.svc:443/extensions/v1beta1/deployment/" . getenv('WP_K8S_PLUGIN_DEPLOYMENT_NAME')); // TODO
+        $namespace="exercise-03";
+        curl_setopt($ch, CURLOPT_URL, "https://kubernetes.default.svc:443/apis/apps/v1/namespaces/".$namespace."/deployments/" . getenv('WP_K8S_PLUGIN_DEPLOYMENT_NAME')); // TODO
 
         // This will disable https verification check
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
